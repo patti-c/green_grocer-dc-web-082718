@@ -92,16 +92,28 @@ cheese_coupons = [{:item=>"CHEESE", :num=>3, :cost=>15.0}]
 
 def checkout(cart, coupons)
   # Both cart and coupons are arrays
+<<<<<<< HEAD
+=======
+
+>>>>>>> dad3f9cb41181de05c73bf5d92ac49cc9a188aac
   
   cart = consolidate_cart(cart)
 
   # First, let's apply coupon discounts.
   
+<<<<<<< HEAD
   # binding.pry
   
   cart = apply_coupons(cart, coupons)
   
   # binding.pry
+=======
+  binding.pry
+  
+  cart = apply_coupons(cart, coupons)
+  
+  binding.pry
+>>>>>>> dad3f9cb41181de05c73bf5d92ac49cc9a188aac
   
   # Next, let's discount items that are on clearance.
   
@@ -113,19 +125,32 @@ def checkout(cart, coupons)
   cart_total = 0
   
   cart.each do |food, data|
+<<<<<<< HEAD
       cart_total += (data[:price] * data[:count])
+=======
+    cart_total += data[:price]
+>>>>>>> dad3f9cb41181de05c73bf5d92ac49cc9a188aac
   end 
   
   if cart_total > 100
     cart_total = 0
     cart.each do |food, data|
+<<<<<<< HEAD
       cart_total += ((data[:price] * 0.9).round(1) * data[:count])
     end 
     return cart_total
+=======
+      cart_total += (data[:price] * 0.9).round(1)
+    end 
+>>>>>>> dad3f9cb41181de05c73bf5d92ac49cc9a188aac
   else 
     return cart_total
   end 
 
+<<<<<<< HEAD
 end
 
 puts checkout(cheese_array, cheese_coupons)
+=======
+end
+>>>>>>> dad3f9cb41181de05c73bf5d92ac49cc9a188aac
